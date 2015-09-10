@@ -1,0 +1,124 @@
+tempfile
+cix
+5.8
+5\.8
+import
+export
+input
+TERM
+pselect
+pulse
+Pulse
+audio
+xprop
+~/\.vimrc_
+axvim-color_
+HOME
+"vimrc_
+\bvimrc_
+([[:punct:]]&[^:])
+[^:]vimrc_
+[ "]vimrc_
+([^:])(vimrc_)
+vimrc
+~/.
+backup
+just
+gethelp
+help all
+unjusti
+just all
+justify
+redraw
+axvim-x
+_
+AX_BASE
+plugins
+tab
+tabnew
+GoBufAddHandler
+usebuftabhandler
+pycharm
+X
+hint:
+duckduckgo
+BOOTSTRAPNAME
+TTY
+^
+$
+adder
+DEFAULT_DELAY
+usec
+tv_usec
+delay
+1//
+1;//
+1; //
+\*
+<\*>
+\<H
+\*\W
+ * 
+*
+\*\b
+\W\*
+\*\>
+\<\*
+\b\*
+\*{1,1}
+\*[^*]
+\*\*\*\*
+elinks
+(color [0-9:]+ ).*
+(color [0-9]+).*
+(color [0-9:]+) .*
+p_
+rv\b
+\] then
+\]then
+then
+"(.*)(bold)\$"
+"(.*)(bold)(.*)"
+"(\S+)\\s\+(\S+)\\s\+\\s\*\$"
+"(\S+)\\s\+(\S+)\\s\*\$"
+"\\s\+(\S+)\\s\*\$"
+"(\S+)\\s\+\\s\*\$"
+\$"
+light
+white
+edch
+dch
+kdch
+csi
+unknown
+shadow-exclude
+/
+/s))\n
+/\n
+\n
+
+
+$AX_AXBE_EDITROOT
+Firefox Developer Edition
+/src/nanorc
+msg 
+# 
+pgs
+axvim-
+-
+utf-8 console support
+utf8_linux_console
+print(
+)
+\1
+returnValue
+"bright\1"
+"light\1\3"
+"\1;\2"
+";\1"
+"\1;$"
+\s*$
+\s*$"
+(light|bright)\1
+ 
+

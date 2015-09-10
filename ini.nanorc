@@ -9,3 +9,245 @@ color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
 color brightblack "(^|[[:space:]])#([^{].*)?$"
 color ,green "[[:space:]]+$"
 color ,red "	+"
+
+## the following is borrowed from my moc_theme.nanorc
+
+## Here is an example for moc theme files
+
+## i looked over the /usr/share/moc/themes directory and found that:
+
+## 1) each file ends with '_theme'
+## 2) each file had a the word (without dashes or compounds around it) 'theme' (yes, in lower case)
+##    it appeared on line #1 of each and every file in the directory so I considered it for the header
+##    of course it's not official on moc's side, but since the distro files come that way, its a good
+##    way to standardize the colorscheme since its certain most will start with a copy of one of those
+##    and then modify it [just like I did :)]
+## You could probably assign this theme to other files, use --syntax=moc_theme if you want to do that
+## or, better yet, add more syntaxes or header items! (and for god sakes, please MERGE back your edits!!)
+
+# notes
+
+# 1) there are a lot of possible combinations for colors, so they are all here i think
+# 2) have any idea how long it took to figure out all those combinations, type it all out,
+#    and make sure the lines are all formatted properly so it's pretty too??? Actually
+#    it took about 5 minutes. I used python to generate the text using permutations to
+#    ensure that ALL possible items would be there, and the good old ANSI SGR code 'G'
+#    helped me align each one at column 30. Funny thing, NOT A SINGLE EDITOR I HAVE
+#    --and i have alot of them, could perform this task, i had to do it that way. In
+#    the end it would have taken either that or perl, but python is much more efficent
+#    with permutations, man I love it.
+# 3) now, the order of priorities was hand-tuned, since python can't possibly know in advance
+#    what we want, i used a custom formula to pick longer patterns over shorter ones AND
+#    filter out redundencies as well. That part actually took some time to fine tune.
+#
+
+
+# easter eggs
+icolor 3;5;32m  "assassin"
+icolor 3;5;36m "ninja"
+
+# component names
+color 4:5:2                  "\<(background|frame|window_title|directory|selected_directory|playlist|selected_playlist|file|selected_file|marked_file|marked_selected_file|info|status|title|state|current_time|time_left|total_time|time_total_frames|sound_parameters|legend|disabled|enabled|empty_mixer_bar|filled_mixer_bar|empty_time_bar|filled_time_bar|entry|entry_title|error|message|plist_time)\>"
+
+# operator (only used is = and # but # is a comment!!)
+color 1:1:1                   "="
+
+# color names to physical color
+color yellow,yellow           "yellow;yellow"
+color yellow,white            "yellow;white"
+color yellow,red              "yellow;red"
+color yellow,magenta          "yellow;magenta"
+color yellow,green            "yellow;green"
+color yellow,black            "yellow;default"
+color yellow,cyan             "yellow;cyan"
+color yellow,blue             "yellow;blue"
+color yellow,black            "yellow;black"
+
+color white,yellow            "white;yellow"
+color white,white             "white;white"
+color white,red               "white;red"
+color white,magenta           "white;magenta"
+color white,green             "white;green"
+color white,black             "white;default"
+color white,cyan              "white;cyan"
+color white,blue              "white;blue"
+color white,black             "white;black"
+
+color red,yellow              "red;yellow"
+color red,white               "red;white"
+color red,red                 "red;red"
+color red,magenta             "red;magenta"
+color red,green               "red;green"
+color red,black               "red;default"
+color red,cyan                "red;cyan"
+color red,blue                "red;blue"
+color red,black               "red;black"
+
+color magenta,yellow          "magenta;yellow"
+color magenta,white           "magenta;white"
+color magenta,red             "magenta;red"
+color magenta,magenta         "magenta;magenta"
+color magenta,green           "magenta;green"
+color magenta,black           "magenta;default"
+color magenta,cyan            "magenta;cyan"
+color magenta,blue            "magenta;blue"
+color magenta,black           "magenta;black"
+
+color green,yellow            "green;yellow"
+color green,white             "green;white"
+color green,red               "green;red"
+color green,magenta           "green;magenta"
+color green,green             "green;green"
+color green,black             "green;default"
+color green,cyan              "green;cyan"
+color green,blue              "green;blue"
+color green,black             "green;black"
+
+color white,yellow            "default;yellow"
+color white,white             "default;white"
+color white,red               "default;red"
+color white,magenta           "default;magenta"
+color white,green             "default;green"
+color white,black             "default;default"
+color white,cyan              "default;cyan"
+color white,blue              "default;blue"
+color white,black             "default;black"
+
+color cyan,yellow             "cyan;yellow"
+color cyan,white              "cyan;white"
+color cyan,red                "cyan;red"
+color cyan,magenta            "cyan;magenta"
+color cyan,green              "cyan;green"
+color cyan,black              "cyan;default"
+color cyan,cyan               "cyan;cyan"
+color cyan,blue               "cyan;blue"
+color cyan,black              "cyan;black"
+
+color brightyellow,yellow     "(light|bright)yellow;yellow"
+color brightyellow,white      "(light|bright)yellow;white"
+color brightyellow,red        "(light|bright)yellow;red"
+color brightyellow,magenta    "(light|bright)yellow;magenta"
+color brightyellow,green      "(light|bright)yellow;green"
+color brightyellow,black      "(light|bright)yellow;default"
+color brightyellow,cyan       "(light|bright)yellow;cyan"
+color brightyellow,blue       "(light|bright)yellow;blue"
+color brightyellow,black      "(light|bright)yellow;black"
+
+color brightwhite,yellow      "(light|bright)white;yellow"
+color brightwhite,white       "(light|bright)white;white"
+color brightwhite,red         "(light|bright)white;red"
+color brightwhite,magenta     "(light|bright)white;magenta"
+color brightwhite,green       "(light|bright)white;green"
+color brightwhite,black       "(light|bright)white;default"
+color brightwhite,cyan        "(light|bright)white;cyan"
+color brightwhite,blue        "(light|bright)white;blue"
+color brightwhite,black       "(light|bright)white;black"
+
+color brightred,yellow        "(light|bright)red;yellow"
+color brightred,white         "(light|bright)red;white"
+color brightred,red           "(light|bright)red;red"
+color brightred,magenta       "(light|bright)red;magenta"
+color brightred,green         "(light|bright)red;green"
+color brightred,black         "(light|bright)red;default"
+color brightred,cyan          "(light|bright)red;cyan"
+color brightred,blue          "(light|bright)red;blue"
+color brightred,black         "(light|bright)red;black"
+
+color brightmagenta,yellow    "(light|bright)magenta;yellow"
+color brightmagenta,white     "(light|bright)magenta;white"
+color brightmagenta,red       "(light|bright)magenta;red"
+color brightmagenta,magenta   "(light|bright)magenta;magenta"
+color brightmagenta,green     "(light|bright)magenta;green"
+color brightmagenta,black     "(light|bright)magenta;default"
+color brightmagenta,cyan      "(light|bright)magenta;cyan"
+color brightmagenta,blue      "(light|bright)magenta;blue"
+color brightmagenta,black     "(light|bright)magenta;black"
+
+color brightgreen,yellow      "(light|bright)green;yellow"
+color brightgreen,white       "(light|bright)green;white"
+color brightgreen,red         "(light|bright)green;red"
+color brightgreen,magenta     "(light|bright)green;magenta"
+color brightgreen,green       "(light|bright)green;green"
+color brightgreen,black       "(light|bright)green;default"
+color brightgreen,cyan        "(light|bright)green;cyan"
+color brightgreen,blue        "(light|bright)green;blue"
+color brightgreen,black       "(light|bright)green;black"
+
+color brightcyan,yellow       "(light|bright)cyan;yellow"
+color brightcyan,white        "(light|bright)cyan;white"
+color brightcyan,red          "(light|bright)cyan;red"
+color brightcyan,magenta      "(light|bright)cyan;magenta"
+color brightcyan,green        "(light|bright)cyan;green"
+color brightcyan,black        "(light|bright)cyan;default"
+color brightcyan,cyan         "(light|bright)cyan;cyan"
+color brightcyan,blue         "(light|bright)cyan;blue"
+color brightcyan,black        "(light|bright)cyan;black"
+
+color brightblue,yellow       "(light|bright)blue;yellow"
+color brightblue,white        "(light|bright)blue;white"
+color brightblue,red          "(light|bright)blue;red"
+color brightblue,magenta      "(light|bright)blue;magenta"
+color brightblue,green        "(light|bright)blue;green"
+color brightblue,black        "(light|bright)blue;default"
+color brightblue,cyan         "(light|bright)blue;cyan"
+color brightblue,blue         "(light|bright)blue;blue"
+color brightblue,black        "(light|bright)blue;black"
+
+color brightblack,yellow      "(light|bright)black;yellow"
+color brightblack,white       "(light|bright)black;white"
+color brightblack,red         "(light|bright)black;red"
+color brightblack,magenta     "(light|bright)black;magenta"
+color brightblack,green       "(light|bright)black;green"
+color brightblack,black       "(light|bright)black;default"
+color brightblack,cyan        "(light|bright)black;cyan"
+color brightblack,blue        "(light|bright)black;blue"
+color brightblack,black       "(light|bright)black;black"
+
+color blue,yellow             "blue;yellow"
+color blue,white              "blue;white"
+color blue,red                "blue;red"
+color blue,magenta            "blue;magenta"
+color blue,green              "blue;green"
+color blue,black              "blue;default"
+color blue,cyan               "blue;cyan"
+color blue,blue               "blue;blue"
+color blue,black              "blue;black"
+
+color black,yellow            "black;yellow"
+color black,white             "black;white"
+color black,red               "black;red"
+color black,magenta           "black;magenta"
+color black,green             "black;green"
+color black,black             "black;default"
+color black,cyan              "black;cyan"
+color black,blue              "black;blue"
+color black,black             "black;black"
+color black                   "black;"
+color ,yellow                 ";yellow\s*$"
+color ,white                  ";white\s*$"
+color ,red                    ";red\s*$"
+color ,magenta                ";magenta\s*$"
+color ,green                  ";green\s*$"
+color ,black                  ";default\s*$"
+color ,cyan                   ";cyan\s*$"
+color ,blue                   ";blue\s*$"
+color ,black                  ";black\s*$"
+
+# single colors have less importance and are overridden by combinations above
+color yellow                  "yellow;\s*$"
+color white                   "white;\s*$"
+color red                     "red;\s*$"
+color magenta                 "magenta;\s*$"
+color green                   "green;\s*$"
+color white                   "default;\s*$"
+color cyan                    "cyan;\s*$"
+color brightyellow            "(light|bright)yellow;\s*$"
+color brightwhite             "(light|bright)white;\s*$"
+color brightred               "(light|bright)red;\s*$"
+color brightmagenta           "(light|bright)magenta;\s*$"
+color brightgreen             "(light|bright)green;\s*$"
+color brightcyan              "(light|bright)cyan;\s*$"
+color brightblack             "(light|bright)black;\s*$"
+color blue                    "blue;\s*$"
+color brightblue              "(light|bright)blue;\s*$"
+

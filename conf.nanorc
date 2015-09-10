@@ -1,10 +1,11 @@
 ## Here is an example for nanorc files.
 ##
+header "#conf"
 syntax "conf" "\.c[o]?nf$"
 ## Possible errors and parameters
 ## Strings
-icolor white ""(\\.|[^"])*""
+icolor green ""(\\.|[^"])*""
 ## Comments
-icolor brightblue "^[[:space:]]*#.*$"
+icolor blue "^[[:space:]]*#.*$"
 icolor cyan "^[[:space:]]*##.*$"
 

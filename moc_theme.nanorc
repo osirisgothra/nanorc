@@ -1,0 +1,249 @@
+## Here is an example for moc theme files
+
+## i looked over the /usr/share/moc/themes directory and found that:
+
+## 1) each file ends with '_theme'
+## 2) each file had a the word (without dashes or compounds around it) 'theme' (yes, in lower case)
+##    it appeared on line #1 of each and every file in the directory so I considered it for the header
+##    of course it's not official on moc's side, but since the distro files come that way, its a good
+##    way to standardize the colorscheme since its certain most will start with a copy of one of those
+##    and then modify it [just like I did :)]
+## You could probably assign this theme to other files, use --syntax=moc_theme if you want to do that
+## or, better yet, add more syntaxes or header items! (and for god sakes, please MERGE back your edits!!)
+
+# notes
+
+# 1) there are a lot of possible combinations for colors, so they are all here i think
+# 2) have any idea how long it took to figure out all those combinations, type it all out,
+#    and make sure the lines are all formatted properly so it's pretty too??? Actually
+#    it took about 5 minutes. I used python to generate the text using permutations to
+#    ensure that ALL possible items would be there, and the good old ANSI SGR code 'G'
+#    helped me align each one at column 30. Funny thing, NOT A SINGLE EDITOR I HAVE
+#    --and i have alot of them, could perform this task, i had to do it that way. In
+#    the end it would have taken either that or perl, but python is much more efficent
+#    with permutations, man I love it.
+# 3) now, the order of priorities was hand-tuned, since python can't possibly know in advance
+#    what we want, i used a custom formula to pick longer patterns over shorter ones AND
+#    filter out redundencies as well. That part actually took some time to fine tune.
+#
+
+syntax                       "_theme"
+header                       "^\s*#+.*\<theme\>.*"
+
+# ERROR LINE (important because mocp says error loading theme but not which line/col or why!)
+# 1) the worst error is, the 'not enough color names before 'fx' settings!'
+# 2) any line w/o a comment, pure whitespace, or a item=value syntax, is an error!
+color brightred,red 		"^.*=\s*(\w+\s+)?bold\s*$"
+color brightred,red         "^\s*([^#= ]+(\s+)?)+\s*$"
+
+# easter eggs
+icolor 3;5;32m  "assassin"
+icolor 3;5;36m "ninja"
+
+# component names
+color 4:5:2                  "\<(background|frame|window_title|directory|selected_directory|playlist|selected_playlist|file|selected_file|marked_file|marked_selected_file|info|status|title|state|current_time|time_left|total_time|time_total_frames|sound_parameters|legend|disabled|enabled|empty_mixer_bar|filled_mixer_bar|empty_time_bar|filled_time_bar|entry|entry_title|error|message|plist_time)\>"
+
+# operator (only used is = and # but # is a comment!!)
+color 1:1:1                   "="
+
+# color names to physical color
+color yellow,yellow           "yellow\s+yellow\s*$"
+color yellow,white            "yellow\s+white\s*$"
+color yellow,red              "yellow\s+red\s*$"
+color yellow,magenta          "yellow\s+magenta\s*$"
+color yellow,green            "yellow\s+green\s*$"
+color yellow,black            "yellow\s+default\s*$"
+color yellow,cyan             "yellow\s+cyan\s*$"
+color yellow,blue             "yellow\s+blue\s*$"
+color yellow,black            "yellow\s+black\s*$"
+
+color white,yellow            "white\s+yellow\s*$"
+color white,white             "white\s+white\s*$"
+color white,red               "white\s+red\s*$"
+color white,magenta           "white\s+magenta\s*$"
+color white,green             "white\s+green\s*$"
+color white,black             "white\s+default\s*$"
+color white,cyan              "white\s+cyan\s*$"
+color white,blue              "white\s+blue\s*$"
+color white,black             "white\s+black\s*$"
+
+color red,yellow              "red\s+yellow\s*$"
+color red,white               "red\s+white\s*$"
+color red,red                 "red\s+red\s*$"
+color red,magenta             "red\s+magenta\s*$"
+color red,green               "red\s+green\s*$"
+color red,black               "red\s+default\s*$"
+color red,cyan                "red\s+cyan\s*$"
+color red,blue                "red\s+blue\s*$"
+color red,black               "red\s+black\s*$"
+
+color magenta,yellow          "magenta\s+yellow\s*$"
+color magenta,white           "magenta\s+white\s*$"
+color magenta,red             "magenta\s+red\s*$"
+color magenta,magenta         "magenta\s+magenta\s*$"
+color magenta,green           "magenta\s+green\s*$"
+color magenta,black           "magenta\s+default\s*$"
+color magenta,cyan            "magenta\s+cyan\s*$"
+color magenta,blue            "magenta\s+blue\s*$"
+color magenta,black           "magenta\s+black\s*$"
+
+color green,yellow            "green\s+yellow\s*$"
+color green,white             "green\s+white\s*$"
+color green,red               "green\s+red\s*$"
+color green,magenta           "green\s+magenta\s*$"
+color green,green             "green\s+green\s*$"
+color green,black             "green\s+default\s*$"
+color green,cyan              "green\s+cyan\s*$"
+color green,blue              "green\s+blue\s*$"
+color green,black             "green\s+black\s*$"
+
+color white,yellow            "default\s+yellow\s*$"
+color white,white             "default\s+white\s*$"
+color white,red               "default\s+red\s*$"
+color white,magenta           "default\s+magenta\s*$"
+color white,green             "default\s+green\s*$"
+color white,black             "default\s+default\s*$"
+color white,cyan              "default\s+cyan\s*$"
+color white,blue              "default\s+blue\s*$"
+color white,black             "default\s+black\s*$"
+
+color cyan,yellow             "cyan\s+yellow\s*$"
+color cyan,white              "cyan\s+white\s*$"
+color cyan,red                "cyan\s+red\s*$"
+color cyan,magenta            "cyan\s+magenta\s*$"
+color cyan,green              "cyan\s+green\s*$"
+color cyan,black              "cyan\s+default\s*$"
+color cyan,cyan               "cyan\s+cyan\s*$"
+color cyan,blue               "cyan\s+blue\s*$"
+color cyan,black              "cyan\s+black\s*$"
+
+color brightyellow,yellow     "yellow\s+yellow\s+bold\s*$"
+color brightyellow,white      "yellow\s+white\s+bold\s*$"
+color brightyellow,red        "yellow\s+red\s+bold\s*$"
+color brightyellow,magenta    "yellow\s+magenta\s+bold\s*$"
+color brightyellow,green      "yellow\s+green\s+bold\s*$"
+color brightyellow,black      "yellow\s+default\s+bold\s*$"
+color brightyellow,cyan       "yellow\s+cyan\s+bold\s*$"
+color brightyellow,blue       "yellow\s+blue\s+bold\s*$"
+color brightyellow,black      "yellow\s+black\s+bold\s*$"
+
+color brightwhite,yellow      "white\s+yellow\s+bold\s*$"
+color brightwhite,white       "white\s+white\s+bold\s*$"
+color brightwhite,red         "white\s+red\s+bold\s*$"
+color brightwhite,magenta     "white\s+magenta\s+bold\s*$"
+color brightwhite,green       "white\s+green\s+bold\s*$"
+color brightwhite,black       "white\s+default\s+bold\s*$"
+color brightwhite,cyan        "white\s+cyan\s+bold\s*$"
+color brightwhite,blue        "white\s+blue\s+bold\s*$"
+color brightwhite,black       "white\s+black\s+bold\s*$"
+
+color brightred,yellow        "red\s+yellow\s+bold\s*$"
+color brightred,white         "red\s+white\s+bold\s*$"
+color brightred,red           "red\s+red\s+bold\s*$"
+color brightred,magenta       "red\s+magenta\s+bold\s*$"
+color brightred,green         "red\s+green\s+bold\s*$"
+color brightred,black         "red\s+default\s+bold\s*$"
+color brightred,cyan          "red\s+cyan\s+bold\s*$"
+color brightred,blue          "red\s+blue\s+bold\s*$"
+color brightred,black         "red\s+black\s+bold\s*$"
+
+color brightmagenta,yellow    "magenta\s+yellow\s+bold\s*$"
+color brightmagenta,white     "magenta\s+white\s+bold\s*$"
+color brightmagenta,red       "magenta\s+red\s+bold\s*$"
+color brightmagenta,magenta   "magenta\s+magenta\s+bold\s*$"
+color brightmagenta,green     "magenta\s+green\s+bold\s*$"
+color brightmagenta,black     "magenta\s+default\s+bold\s*$"
+color brightmagenta,cyan      "magenta\s+cyan\s+bold\s*$"
+color brightmagenta,blue      "magenta\s+blue\s+bold\s*$"
+color brightmagenta,black     "magenta\s+black\s+bold\s*$"
+
+color brightgreen,yellow      "green\s+yellow\s+bold\s*$"
+color brightgreen,white       "green\s+white\s+bold\s*$"
+color brightgreen,red         "green\s+red\s+bold\s*$"
+color brightgreen,magenta     "green\s+magenta\s+bold\s*$"
+color brightgreen,green       "green\s+green\s+bold\s*$"
+color brightgreen,black       "green\s+default\s+bold\s*$"
+color brightgreen,cyan        "green\s+cyan\s+bold\s*$"
+color brightgreen,blue        "green\s+blue\s+bold\s*$"
+color brightgreen,black       "green\s+black\s+bold\s*$"
+
+color brightcyan,yellow       "cyan\s+yellow\s+bold\s*$"
+color brightcyan,white        "cyan\s+white\s+bold\s*$"
+color brightcyan,red          "cyan\s+red\s+bold\s*$"
+color brightcyan,magenta      "cyan\s+magenta\s+bold\s*$"
+color brightcyan,green        "cyan\s+green\s+bold\s*$"
+color brightcyan,black        "cyan\s+default\s+bold\s*$"
+color brightcyan,cyan         "cyan\s+cyan\s+bold\s*$"
+color brightcyan,blue         "cyan\s+blue\s+bold\s*$"
+color brightcyan,black        "cyan\s+black\s+bold\s*$"
+
+color brightblue,yellow       "blue\s+yellow\s+bold\s*$"
+color brightblue,white        "blue\s+white\s+bold\s*$"
+color brightblue,red          "blue\s+red\s+bold\s*$"
+color brightblue,magenta      "blue\s+magenta\s+bold\s*$"
+color brightblue,green        "blue\s+green\s+bold\s*$"
+color brightblue,black        "blue\s+default\s+bold\s*$"
+color brightblue,cyan         "blue\s+cyan\s+bold\s*$"
+color brightblue,blue         "blue\s+blue\s+bold\s*$"
+color brightblue,black        "blue\s+black\s+bold\s*$"
+
+color brightblack,yellow      "black\s+yellow\s+bold\s*$"
+color brightblack,white       "black\s+white\s+bold\s*$"
+color brightblack,red         "black\s+red\s+bold\s*$"
+color brightblack,magenta     "black\s+magenta\s+bold\s*$"
+color brightblack,green       "black\s+green\s+bold\s*$"
+color brightblack,black       "black\s+default\s+bold\s*$"
+color brightblack,cyan        "black\s+cyan\s+bold\s*$"
+color brightblack,blue        "black\s+blue\s+bold\s*$"
+color brightblack,black       "black\s+black\s+bold\s*$"
+
+color blue,yellow             "blue\s+yellow\s*$"
+color blue,white              "blue\s+white\s*$"
+color blue,red                "blue\s+red\s*$"
+color blue,magenta            "blue\s+magenta\s*$"
+color blue,green              "blue\s+green\s*$"
+color blue,black              "blue\s+default\s*$"
+color blue,cyan               "blue\s+cyan\s*$"
+color blue,blue               "blue\s+blue\s*$"
+color blue,black              "blue\s+black\s*$"
+
+color black,yellow            "black\s+yellow\s*$"
+color black,white             "black\s+white\s*$"
+color black,red               "black\s+red\s*$"
+color black,magenta           "black\s+magenta\s*$"
+color black,green             "black\s+green\s*$"
+color black,black             "black\s+default\s*$"
+color black,cyan              "black\s+cyan\s*$"
+color black,blue              "black\s+blue\s*$"
+color black,black             "black\s+black\s*$"
+color black                   "black\s+\s*$"
+color ,yellow                 "\s+yellow\s*$"
+color ,white                  "\s+white\s*$"
+color ,red                    "\s+red\s*$"
+color ,magenta                "\s+magenta\s*$"
+color ,green                  "\s+green\s*$"
+color ,black                  "\s+default\s*$"
+color ,cyan                   "\s+cyan\s*$"
+color ,blue                   "\s+blue\s*$"
+color ,black                  "\s+black\s*$"
+
+# single colors have less importance and are overridden by combinations above
+color yellow                  "yellow\s+\s*$"
+color white                   "white\s+\s*$"
+color red                     "red\s+\s*$"
+color magenta                 "magenta\s+\s*$"
+color green                   "green\s+\s*$"
+color white                   "default\s+\s*$"
+color cyan                    "cyan\s+\s*$"
+color brightyellow            "yellow\s+\s+bold\s*$"
+color brightwhite             "white\s+\s+bold\s*$"
+color brightred               "red\s+\s+bold\s*$"
+color brightmagenta           "magenta\s+\s+bold\s*$"
+color brightgreen             "green\s+\s+bold\s*$"
+color brightcyan              "cyan\s+\s+bold\s*$"
+color brightblack             "black\s+\s+bold\s*$"
+color blue                    "blue\s+\s*$"
+color brightblue              "blue\s+\s+bold\s*$"
+
+# the comment line (inline comments are not legal, at least i dont think they are)
+color 4:4:3                   "^\s+#.*"

@@ -1,0 +1,44 @@
+#
+# pa-cli.nanorc
+#
+# Description: pulseaudio's cli syntax
+#  Maintainer: Gabriel Sharp <osirisgothra@hotmail.com>
+#     Revised: August 28, 2015   1:12 PM EST
+#
+# The following syntax works for GNU nano version >= 2.4.0
+# which supports the linter, magic and extended regex capabilities
+# and is still pretty new. Also, the 'osiris-color-hex.patch' is required
+# (it is a derivitive of dreamlax-color.patch that allows 0-F not 0-5)
+#
+
+syntax ".pa"
+
+# COMMENTS
+color 5:5:0 "^\s*#.*"
+# BOOLEANS
+color E:5:E "\<(1|t|yes|y|true|t|on|0|f|no|n|false|f|off)\>"
+# STATUS COMMANDS
+color E:E:0 "\<(list-(modules|cards|sinks|sources|clients|sink-inputs|source-outputs)|stat|info|ls|list)\>"
+# MOD MANAGEMENT
+color 0:E:7 "\<((load|unload|describe)-module)\>"
+# VOLUME COMMANDS
+color E:7:5 "\<((set-(sink|source))-(input-)?(volume|mute))\>"
+# CONFIG COMMANDS
+color 7:7:E "\<(set-(default-(sink|source)|card-profile|(sink|port)-source|port-latency-offset|suspend-(sink|source))|suspend)\>"
+# MOVING/PROP
+color 0:E:E "\<(move-(sink-input|source-output))\>"
+# PROP
+color 0:5:E "\<(update-(sink|source)(-(input|output))?-proplist)\>"
+# SAMP
+color 0:F:5 "\<()\>"
+
+color green "^\s\<()\>"
+color green "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|=|&|\|)"
+color green "-[Ldefgruwx]\>"
+color green "-(eq|ne|gt|lt|ge|le|s|n|z)\>"
+color brightblue "\<(cat|cd|chmod|chown|cp|echo|env|export|grep|install|let|ln|make|mkdir|mv|rm|sed|set|tar|touch|umask|unset)\>"
+icolor brightgreen "^\s+?[0-9A-Z_]+\s+?\(\)"
+icolor brightred "\$\{?[0-9A-Z_!@#$*?-]+\}?"
+color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+color cyan "(^|[[:space:]])#.*$"
+#color ,green "[[:space:]]+$"
