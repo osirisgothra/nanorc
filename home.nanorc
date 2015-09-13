@@ -18,11 +18,46 @@
 ## Use auto-indentation.
 set autoindent
 
-## Backup files to filename~.
+
+## Backups
+##
+## This feature needs a bit of explaining and will also help to explain other
+## entries, too.  For backups, there are two options:
+##
+## 'set backup'  					Backup files to 'filename~'
+## 'set backupdir "/path/to/dir"'	The directory to put unique backup files in.
+##
+## IMPORTANT: backup and backupdir are completely separate, to clarify, this
+##            is the rule chart:
+##
+##            >>> for a filename named "/dir/myfile.txt"...
+##
+##			  'backup'		'backupdir="/var/bak"	backup(s) created (comma separated: file1[, file2])
+##            -------------------------------------------------------------------------------------------
+##				set				set					/dir/myfile.txt~, /var/bak/!dir!myfile.txt~<.#>
+##				unset			set					/var/bak/!dir!myfile.txt~<.#>
+##				unset			unset				no backup made!
+##				set				unset				/dir/myfile.txt~
+##
+##
+##            NOTES: 1. <.#> is a session index, if it doesnt exist, that means its the first backed up session,
+##                      otherwise it means 'session #' Example: /var/bak/!dir!myfile.txt~.1 for the second time edited.
+##
+##					 2. for backupdir, the path must exist or it is not used
+##
+##                   3. you can specify multiple backupdir entries (one per line) and the LAST one that exists will be
+##	                    used regardless if the others are found or not (good for admin like below).
+##                   4. in most cases, you will want one or the other, so, 'set backup' is disabled by default, but not
+##					    the backupdir entry(s).
+##
+
 set backup
 
-## The directory to put unique backup files in.
-set backupdir "/home/gabriel/.cache/nano-backups"
+set backupdir "/tmp"
+set backupdir "~/.cache/nano/backups"
+set backupdir "/var/cache/nano/backups"
+set backupdir "/var/backups/nano"
+set backupdir "/etc/nano/backups"
 
 ## Do backwards searches by default.
 unset backwards
